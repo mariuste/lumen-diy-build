@@ -1,10 +1,10 @@
-# Lumen DIY build: a self-sourced pick-and-place machine for about 1,380 €
+# Lumen DIY build: a self-sourced pick-and-place machine for about 1,420 €
 
 A self-sourced build of Opulo's open-source pick-and-place machine
 [LumenPnP v4](https://github.com/opulo-inc/lumenpnp), built in Germany. Only the parts that are hard to make myself come from
 Opulo: the Control Box, the two toolhead kits and the assembled ring light and endstop boards.
-Everything else comes from AliExpress, eBay.de and German suppliers, and the plates are milled
-from aluminium in a makerspace.
+Everything else comes from AliExpress, eBay.de and German suppliers, and the plates are cut from
+aluminium sheet and drilled in a makerspace.
 
 All prices were checked on 19 Nov 2026, with the right variant selected on each product page.
 They include shipping to Germany, EU import duty, fees and VAT. The full list with links is in
@@ -17,29 +17,31 @@ They include shipping to Germany, EU import duty, fees and VAT. The full list wi
 | Supplier | What | Total [€] |
 |---|---|---|
 | Opulo (US) | Control Box, 2 Toolhead Kits, Ring Light Set, Endstop Set; UPS shipping, duty, VAT, UPS fee | 538.23 |
-| AliExpress | Extrusions, rails, motors, belts, cameras, nozzles, PSU, cabling, drag chain, screws | 429.91 |
-| AliExpress import fees | 17 parcels × 5.95 € (see below) | 101.15 |
-| SUNLU (AliExpress, DE warehouse) | 4 kg PLA+ for printed parts and strip feeders | 49.58 |
-| aluminium-online-shop.de | Flat bar for the plates and the X cable chain support | 46.74 |
-| eBay.de | Small parts and special nuts, free shipping within Germany | 44.61 |
+| AliExpress | Extrusions, rails, motors, belts, cameras, nozzles, PSU, cabling, drag chain, screws, wing nuts | 443.30 |
+| AliExpress import fees | 18 parcels × 5.95 € (see below) | 107.10 |
+| aluminium-online-shop.de | Sheet cut to size for the three plates and the X cable chain support | 68.45 |
+| SUNLU (AliExpress, DE warehouse) | 4 kg PLA+ for printed parts and 19 strip feeders | 49.58 |
+| eBay.de | Small parts and special nuts, free shipping within Germany | 43.61 |
 | JLCPCB | Bare PCBs: cal-fid, nozzle-cal-token, ftp | 31.99 |
-| Local stock | 198 standard screws and nuts | 9.90 |
-| **Subtotal** | | **1,252.11** |
-| Contingency 10 % | | 125.21 |
-| **Total** | | **1,377.32** |
+| Local stock | 130 standard screws and nuts | 6.50 |
+| **Subtotal** | | **1,288.76** |
+| Contingency 10 % | | 128.88 |
+| **Total** | | **1,417.64** |
 
-For comparison: Opulo lists the LumenPnP kit at 1,995 $ before shipping, duty and VAT
+For comparison: Opulo lists the LumenPnP kit at 1,995 USD before shipping, duty and VAT
 (opulo.io, 19 Nov 2026).
 
 ## Where this build deviates from the official BOM
 
-- **Feeders:** 34 printed strip feeders instead of Photon feeders. Opulo's feeder motor kit is
-  sold out; Photon feeders can be added later.
-- **Plates:** the staging plate and the two build plates are 600 × 75 × 3 mm steel in the official
-  design (Opulo sells them for 70 $ each). Here they are milled from 3 mm aluminium flat bar
-  (80 mm wide, milled to 75 mm). The CAD files are in the LumenPnP repo under `src/CSM/`.
+- **Feeders:** 19 printed strip feeders instead of Photon feeders. Opulo's feeder motor kit is
+  sold out; Photon feeders can be added later. Plan and lane count: [feeder/README.md](feeder/README.md).
+- **Plates:** in the official design the staging plate (600 × 120 × 3 mm) and the two build plates
+  (600 × 75 × 3 mm) are powder-coated steel with tapped holes (Opulo sells a build plate for 70 USD).
+  Here they are AlMg3 sheet cut to size (±0.2 mm) and only drilled: fixtures and strip feeders are
+  held with M3 screws and wing nuts, so the 3.3 mm holes need no thread. The CAD files are in the
+  LumenPnP repo under `src/CSM/`.
 - **X cable chain support:** this 655 mm PCB carries no components and is too long for JLCPCB.
-  It is milled from a 50 × 2 mm aluminium bar instead.
+  It is cut from 2 mm aluminium sheet (655 × 44.5 mm) and drilled instead.
 - **Cable harnesses:** made from a JST PH 2.0 crimp kit and 24 AWG wire instead of Opulo's
   harness kits. The motherboard uses JST PH (2.0 mm) throughout, not XH.
 - **Power supply:** Mean Well LRS-150-24 with a mains cord and a 5.5 × 2.1 mm DC cable, instead
@@ -75,7 +77,7 @@ These rules changed in 2026 and affect any build that buys from China:
 
 The 10 % contingency covers these.
 
-Not included: tools (M4 tap, crimping tool for JST PH), print time, and the components for the
+Not included: tools (drill, crimping tool for JST PH), print time, and the components for the
 boards the machine will assemble.
 
 ## Repository layout
@@ -83,7 +85,7 @@ boards the machine will assemble.
 - `bom/` – bill of materials and costs; `bom/quotes/` for quotes and invoices
 - `pcb/` – Gerber files for the bare PCBs
 - `print/` – print files for strip feeders and machine parts
-- `feeder/` – feeder notes
+- `feeder/` – strip feeder plan
 
 ## Credits and license
 
